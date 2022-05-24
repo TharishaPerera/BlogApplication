@@ -8,8 +8,15 @@
             {{-- <div class="well"> --}}
             <div class="col-md-12">
                 <div class="h-100 mt-3 p-4 bg-light border rounded-3">
-                    <h3><a href="/posts/{{$post->id}}">{{ $post->title }}</a></h3>
-                    <small>Written on {{ $post->created_at }}</small>
+                    <div class="row">
+                        <div class="col-md-4 clo-sm-4">
+                            <img src="/storage/cover_images/{{$post->cover_image}}" style="width: 100%;">
+                        </div>
+                        <div class="col-md-8 clo-sm-4">
+                            <h3><a href="/posts/{{$post->id}}">{{ $post->title }}</a></h3>
+                            <small>Written on {{ $post->created_at }} by {{$post->user->name}}</small>
+                        </div>
+                    </div>
                 </div>
             </div>
         @endforeach
