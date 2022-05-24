@@ -7,14 +7,30 @@
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <title>{{ config('app.name', 'Blog Application') }}</title>
+
 </head>
 
 <body>
     @include('inc.navbar')
-    
-    <div class="container">
+
+    <div class="container mt-3">
+        @include('inc.messages')
         @yield('content')
     </div>
+
+    {{-- CKEditor CDN --}}
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
 </body>
 
 </html>
