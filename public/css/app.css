@@ -11282,3 +11282,30 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #212529;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5c636a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #787e85;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.index-h1 {
+  font-size: 65px;
+}
+
+.index-p {
+  font-size: 20px;
+}
