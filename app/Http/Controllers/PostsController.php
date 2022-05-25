@@ -26,9 +26,18 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('created_at', 'desc')->paginate(10);
+        $search = request()->query('search');
+        $value = request()->query('search');
+
+        if ($search){
+            $posts = Post::where('title', 'LIKE', "%{$search}%")->orderBy('created_at', 'desc')->paginate(10);
+        }else{
+            $posts = Post::orderBy('created_at', 'desc')->paginate(10);
+        }
+
         return view('posts.index')
-            ->with('posts', $posts);
+            ->with('posts', $posts)
+            ->with('value', $value);
     }
 
     /**
