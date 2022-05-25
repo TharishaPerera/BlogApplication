@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <div class="card">
                     <div class="card-header">{{ __('Dashboard') }}</div>
 
@@ -27,12 +27,13 @@
                                 @foreach ($posts as $post)
                                     <tr>
                                         <td>{{ $post->title }}</td>
-                                        <td><a href="/posts/{{ $post->id }}/edit" class="btn btn-primary mx-1">Edit</a>
+                                        <td  class="col-md-1">
+                                            <a href="/posts/{{ $post->id }}/edit" class="btn btn-primary mx-1">Edit</a>
                                         </td>
-                                        <td>
+                                        <td class="col-md-1">
                                             {!! Form::open(['action' => ['App\Http\Controllers\PostsController@destroy', $post->id], 'method' => 'POST', 'class' => 'pull-right mx-1']) !!}
-                                                {{ Form::hidden('_method', 'DELETE') }}
-                                                {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
+                                            {{ Form::hidden('_method', 'DELETE') }}
+                                            {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
                                             {!! Form::close() !!}
                                         </td>
                                     </tr>
