@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 24, 2022 at 12:13 PM
+-- Generation Time: May 26, 2022 at 05:25 AM
 -- Server version: 8.0.27
 -- PHP Version: 8.0.13
 
@@ -81,13 +81,6 @@ CREATE TABLE IF NOT EXISTS `password_resets` (
   KEY `password_resets_email_index` (`email`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `password_resets`
---
-
-INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
-('tharishaperera@gmail.com', '$2y$10$tdk0uOP5XN6qo.0FpcyBfOhXTNhuyRU69/zcVp.QRTQTY4LDsyVMW', '2022-05-24 06:39:07');
-
 -- --------------------------------------------------------
 
 --
@@ -146,14 +139,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Tharisha Perera', 'tharishaperera@gmail.com', NULL, '$2y$10$5IWE444gjeJaVC27/QBcAe5.h7tHyBiovS8mX.JsYgOS3jsfrvlHW', NULL, '2022-05-24 06:38:06', '2022-05-24 06:38:06');
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
